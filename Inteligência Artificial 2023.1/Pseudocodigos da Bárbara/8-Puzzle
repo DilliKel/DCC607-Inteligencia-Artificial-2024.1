@@ -1,0 +1,41 @@
+função resolverQuebraCabeca(estadoInicial, estadoObjetivo):
+    fila <- criarFila()
+    visitados <- criarConjuntoVazio()
+    
+    adicionarNaFila(fila, (estadoInicial, []))  # (estado, ações)
+    
+    enquanto não vazio(fila) faça:
+        estado, acoes <- removerDaFila(fila)
+        
+        se estado == estadoObjetivo então:
+            retornar acoes  # Solução encontrada
+        
+        adicionar estado em visitados
+        
+        para cada acao em obterAcoesPossiveis(estado) faça:
+            novoEstado <- executarAcao(estado, acao)
+            
+            se novoEstado não está em visitados então:
+                adicionarNaFila(fila, (novoEstado, acoes + [acao]))
+    
+    retornar "Não foi possível encontrar solução"
+
+função obterAcoesPossiveis(estado):
+    # Retorna as ações possíveis para o estado atual do quebra-cabeça
+    # Exemplo de ações: 'cima', 'baixo', 'esquerda', 'direita'
+    ...
+
+função executarAcao(estado, acao):
+    # Executa a ação no estado atual do quebra-cabeça e retorna o novo estado resultante
+    ...
+
+estadoInicial <- obterEstadoInicial()  # Obter o estado inicial do quebra-cabeça
+estadoObjetivo <- obterEstadoObjetivo()  # Obter o estado objetivo desejado
+
+solucao <- resolverQuebraCabeca(estadoInicial, estadoObjetivo)
+
+se solucao != "Não foi possível encontrar solução" então:
+    imprimir "Solução encontrada:"
+    imprimir solucao
+senão:
+    imprimir "Não foi possível encontrar uma solução."

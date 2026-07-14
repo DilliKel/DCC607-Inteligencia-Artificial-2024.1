@@ -1,0 +1,16 @@
+busca_em_largura(inicio, objetivo):
+    fila = [inicio]
+    visitado = {inicio}
+    
+    enquanto fila não está vazia:
+        nó = fila.pop(0)
+        
+        se nó = objetivo:
+            retorne nó
+        
+        para cada vizinho em nó.vizinhos:
+            se vizinho não está em visitado:
+                visitado.adicione(vizinho)
+                fila.append(vizinho)
+    
+    retorne "Objetivo não encontrado"

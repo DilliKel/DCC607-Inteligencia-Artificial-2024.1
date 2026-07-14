@@ -1,0 +1,27 @@
+A_estrela(grafo, inicio, alvo):
+    lista_fechada = vazia
+    lista_aberta = [inicio]
+    g[inicio] = 0
+    f[inicio] = g[inicio] + h(inicio, alvo)
+    
+    enquanto lista_aberta não está vazia:
+        u = nó com o menor valor f[u] em lista_aberta
+        remova u de lista_aberta
+        adicione u em lista_fechada
+        
+        se u = alvo então
+            retorne o caminho reconstruído de inicio até alvo
+        
+        para cada vizinho v de u:
+            se v está em lista_fechada, então
+                continue
+            
+            novo_g = g[u] + custo(u, v)  // custo para chegar ao vizinho v a partir de u
+            se v não está em lista_aberta ou novo_g < g[v]:
+                g[v] = novo_g
+                f[v] = g[v] + h(v, alvo)
+                se v não está em lista_aberta, então
+                    adicione v em lista_aberta
+    
+    // Não há caminho possível até o alvo
+    retorne "Caminho não encontrado"

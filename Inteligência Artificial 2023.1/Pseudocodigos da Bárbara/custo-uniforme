@@ -1,0 +1,18 @@
+busca_de_custo_uniforme(inicio, objetivo):
+    fila_prioridade = {inicio}
+    custo = {inicio: 0}
+    
+    enquanto fila_prioridade não está vazia:
+        nó = fila_prioridade.remove_min()
+        
+        se nó = objetivo:
+            retorne nó
+        
+        para cada vizinho em nó.vizinhos:
+            novo_custo = custo[nó] + custo(nó, vizinho)
+            
+            se vizinho não está em custo ou novo_custo < custo[vizinho]:
+                custo[vizinho] = novo_custo
+                fila_prioridade.update(vizinho, novo_custo)
+    
+    retorne "Objetivo não encontrado"

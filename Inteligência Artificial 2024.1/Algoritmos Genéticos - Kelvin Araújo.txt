@@ -1,0 +1,15 @@
+Kelvin Araújo Ferreira - 2019037653
+
+Atividade Prática - Resolução de Problemas utilizando Algoritmos Genéticos
+
+
+Link repositório do GITHUB: https://github.com/DilliKel/DCC607-Inteligencia-Artificial-2024.1.git
+
+
+
+Links do Colab:
+Questão 01: https://colab.research.google.com/drive/1mERuPJlL7PTtT0ox-j-AR4nrStiGdTY2?usp=sharing
+
+Questão 02: https://colab.research.google.com/drive/1HLWnT8j8YWgDm2SLEWryEmsT9koKx-Ye?usp=sharing
+
+Questão 03: https://colab.research.google.com/drive/1oA8zZuFnU7W1IjdZbLFt7I5H1-JT_O1e?usp=sharing

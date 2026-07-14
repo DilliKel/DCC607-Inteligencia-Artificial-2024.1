@@ -1,0 +1,14 @@
+busca_em_profundidade_limitada(nó, objetivo, limite):
+    se nó = objetivo:
+        retorne nó
+    
+    se limite = 0:
+        retorne "Limite de profundidade atingido"
+    
+    para cada vizinho em nó.vizinhos:
+        resultado = busca_em_profundidade_limitada(vizinho, objetivo, limite - 1)
+        
+        se resultado ≠ "Limite de profundidade atingido" e resultado ≠ "Objetivo não encontrado":
+            retorne resultado
+    
+    retorne "Objetivo não encontrado"

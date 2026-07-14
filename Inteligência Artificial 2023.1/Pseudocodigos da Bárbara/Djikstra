@@ -1,0 +1,32 @@
+função dijkstra(grafo, inicio):
+    distancias <- inicializarDistancias(inicio)  # Distância estimada do nó inicial para cada nó do grafo
+    visitados <- criarConjuntoVazio()
+    filaPrioridade <- criarFilaPrioridade()  # Fila de prioridade para selecionar o nó com a menor distância
+    
+    adicionarNaFilaPrioridade(filaPrioridade, (inicio, 0))  # Insere o nó inicial com distância zero na fila
+    
+    enquanto não vazio(filaPrioridade) faça:
+        no, distancia <- removerDaFilaPrioridade(filaPrioridade)  # Seleciona o nó com menor distância
+        adicionar em visitados
+        
+        para cada vizinho, peso em obterVizinhos(grafo, no) faça:
+            novaDistancia <- distancia + peso
+            
+            se novaDistancia < distancias[vizinho] então:
+                distancias[vizinho] <- novaDistancia
+                adicionarNaFilaPrioridade(filaPrioridade, (vizinho, novaDistancia))
+    
+    retornar distancias
+
+função obterVizinhos(grafo, no):
+    # Retorna os vizinhos do nó no grafo com seus respectivos pesos
+    ...
+
+grafo <- obterGrafo()  # Obter o grafo com nós e arestas
+inicio <- obterNoInicial()  # Obter o nó inicial para iniciar o algoritmo
+
+distancias <- dijkstra(grafo, inicio)
+
+imprimir "Distâncias mínimas:"
+para cada no, distancia em distancias faça:
+    imprimir "Distância de", inicio, "para", no, ":", distancia
