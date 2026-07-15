@@ -1,5 +1,0 @@
-Kelvin Araújo Ferreira - 2019037653
-
-Atividade de Busca Informada A*
-
-Link do Repositório: https://github.com/DilliKel/DCC607-Inteligencia-Artificial-2024.1.git
